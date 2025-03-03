@@ -1,0 +1,3 @@
+- Config box is used for changing mo['key'] to mp.key
+- ensure_annotation -> it runs type check to enforce annotations that are defined on a funtion definition
+- the entity in src directory is meant for return type

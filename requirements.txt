@@ -2,7 +2,7 @@ tensorflow
 pandas
 dvc
 notebook
-numy
+numpy
 matplotlib
 seaborn
 python-box
