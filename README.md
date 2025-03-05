@@ -70,3 +70,48 @@ python app.py
 2. AmazonEC2FullAccess
 
 ```
+
+## 3. Create ECR repo to store /dave docker image
+```bash
+    copy the repo uri
+    ex : 022499019910.dkr.ecr.us-east-1.amazonaws.com/chicken
+```
+
+## 4. Create an EC2 machine Instance(Ubuntu)
+
+## 5. Connect EC2 instance and install docker
+```bash
+#optinal
+
+sudo apt-get update -y
+
+sudo apt-get upgrade
+
+#required
+
+curl -fsSL https://get.docker.com -o get-docker.sh
+
+sudo sh get-docker.sh
+
+sudo usermod -aG docker ubuntu
+
+newgrp docker
+```
+
+## 6. create a self runner in github repo settings
+```bash
+in settings under action/runner create a new runner. 
+a. while running the cmds in order when asked for runner group keep it default but for runner name use self-hosted
+```
+
+## 7. Setup github secrets
+```bash
+AWS_ACCESS_KEY_ID=
+
+AWS_SECRET_ACCESS_KEY=
+
+AWS_REGION = us-east-1
+
+AWS_ECR_LOGIN_URI = ''(for example it will be 022499019910.dkr.ecr.us-east-1.amazonaws.com)
+
+ECR_REPOSITORY_NAME = '' (example chicken as last part of ECR uri)
